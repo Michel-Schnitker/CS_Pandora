@@ -1,0 +1,131 @@
+﻿<Window x:Class="Csharp_WPF_PandoraProjekt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Pandora Projekt" Height="842.836" Width="1481" ResizeMode="NoResize">
+    <Grid Background="#FF6E8F9D">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+
+
+
+        <Frame Content=" " HorizontalAlignment="Left" Height="700" Margin="22,54,0,0" VerticalAlignment="Top" Width="30" BorderBrush="Black" Background="#FF476B81"/>
+
+
+
+
+        <Frame Content=" Control-Panel" HorizontalAlignment="Left" Height="343" Margin="762,54,0,0" VerticalAlignment="Top" Width="216" BorderBrush="Black" Background="#FF476B81"/>
+        <Frame Content=" Stats-Panel" HorizontalAlignment="Left" Height="170" Margin="762,402,0,0" VerticalAlignment="Top" Width="216" BorderBrush="Black" Background="#FF476B81"/>
+        <Frame Content=" Focus-Field" HorizontalAlignment="Left" Height="176" Margin="762,578,0,0" VerticalAlignment="Top" Width="437" BorderBrush="Black" Background="#FF476B81"/>
+        <Frame Content=" " HorizontalAlignment="Left" Height="30" Margin="22,20,0,0" VerticalAlignment="Top" Width="1433" BorderBrush="Black" Background="#FF476B81"/>
+        <Frame Content=" " HorizontalAlignment="Left" Height="30" Margin="22,760,0,0" VerticalAlignment="Top" Width="1433" BorderBrush="Black" Background="#FF476B81"/>
+
+        <Canvas x:Name="playground" HorizontalAlignment="Left" Height="700" Margin="56,54,0,0" VerticalAlignment="Top" Width="700" Background="#FFDCD9D9" MouseLeftButtonDown="playground_MouseLeftButtonDown" MouseMove="playground_MouseMove"/>
+
+        <Button x:Name="StartStop" Content="Start" HorizontalAlignment="Left" Height="34" Margin="778,116,0,0" VerticalAlignment="Top" Width="184" Background="#FF4A94E4" BorderBrush="Black" Click="StartStop_Click" IsEnabled="False"/>
+        <Button x:Name="Clean" Content="clean" HorizontalAlignment="Left" Height="34" Margin="778,156,0,0" VerticalAlignment="Top" Width="88" Background="#FF4A94E4" BorderBrush="Black" Click="Clean_Click" RenderTransformOrigin="0.5,0.457"/>
+        <Button x:Name="FillRandom" Content="RandomFill" HorizontalAlignment="Left" Height="34" Margin="876,156,0,0" VerticalAlignment="Top" Width="86" Background="#FF4A94E4" BorderBrush="Black" Click="FillRandom_Click"/>
+
+        <Label Content="Runde" HorizontalAlignment="Left" Height="28" Margin="784,428,0,0" VerticalAlignment="Top" Width="58"/>
+        <Label x:Name="Stat_Runde" Content="0" HorizontalAlignment="Left" Height="28" Margin="848,428,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label Content="Plankton" HorizontalAlignment="Left" Height="28" Margin="784,460,0,0" VerticalAlignment="Top" Width="58"/>
+        <Label x:Name="Stat_Plankton" Content="0" HorizontalAlignment="Left" Height="28" Margin="848,460,0,0" VerticalAlignment="Top" Width="50"/>
+        <Label Content="Grün" HorizontalAlignment="Left" Height="28" Margin="904,460,0,0" VerticalAlignment="Top" Width="58"/>
+        <Label Content="Fische" HorizontalAlignment="Left" Height="28" Margin="784,492,0,0" VerticalAlignment="Top" Width="58"/>
+        <Label x:Name="Stat_Fische" Content="0" HorizontalAlignment="Left" Height="28" Margin="848,492,0,0" VerticalAlignment="Top" Width="50"/>
+        <Label Content="Gelb" HorizontalAlignment="Left" Height="28" Margin="904,492,0,0" VerticalAlignment="Top" Width="58"/>
+        <Label Content="Haie" HorizontalAlignment="Left" Height="28" Margin="784,524,0,0" VerticalAlignment="Top" Width="58"/>
+        <Label x:Name="Stat_Haie" Content="0" HorizontalAlignment="Left" Height="28" Margin="848,524,0,0" VerticalAlignment="Top" Width="50"/>
+        <Label Content="Rot" HorizontalAlignment="Left" Height="28" Margin="904,524,0,0" VerticalAlignment="Top" Width="58"/>
+
+        <Label Content="Michel Schnitker 2018 01 03 v 0.0.5" HorizontalAlignment="Left" Height="28" Margin="1227,762,0,0" VerticalAlignment="Top" Width="228"/>
+
+        <Label Content="X Achse" HorizontalAlignment="Left" Height="28" Margin="784,595,0,0" VerticalAlignment="Top" Width="52"/>
+        <Label x:Name="Focus_XAchse" Content="" HorizontalAlignment="Left" Height="28" Margin="842,595,0,0" VerticalAlignment="Top" Width="28"/>
+        <Label Content="Y Achse" HorizontalAlignment="Left" Height="28" Margin="876,595,0,0" VerticalAlignment="Top" Width="52"/>
+        <Label x:Name="Focus_YAchse" Content="" HorizontalAlignment="Left" Height="28" Margin="934,595,0,0" VerticalAlignment="Top" Width="28"/>
+        <Label Content="Typ" HorizontalAlignment="Left" Height="28" Margin="784,624,0,0" VerticalAlignment="Top" Width="66"/>
+        <Label x:Name="Focus_Typ" Content="" HorizontalAlignment="Left" Height="28" Margin="856,624,0,0" VerticalAlignment="Top" Width="106"/>
+        <Label Content="Alter" HorizontalAlignment="Left" Height="28" Margin="784,654,0,0" VerticalAlignment="Top" Width="66"/>
+        <Label x:Name="Focus_Alter" Content="" HorizontalAlignment="Left" Height="28" Margin="856,654,0,0" VerticalAlignment="Top" Width="38"/>
+        <Label Content="Sättigung" HorizontalAlignment="Left" Height="28" Margin="784,684,0,0" VerticalAlignment="Top" Width="66"/>
+        <Label x:Name="Focus_Sättigung" Content="" HorizontalAlignment="Left" Height="28" Margin="856,684,0,0" VerticalAlignment="Top" Width="38"/>
+        <Label Content="Runde" HorizontalAlignment="Left" Height="28" Margin="784,717,0,0" VerticalAlignment="Top" Width="66"/>
+        <Label x:Name="Focus_Runde" Content="" HorizontalAlignment="Left" Height="28" Margin="855,717,0,0" VerticalAlignment="Top" Width="38"/>
+        <Label Content="Runde" HorizontalAlignment="Left" Height="28" Margin="1006,595,0,0" VerticalAlignment="Top" Width="66"/>
+        <Label x:Name="Focus_PfalnzenRunde" Content="" HorizontalAlignment="Left" Height="28" Margin="1077,595,0,0" VerticalAlignment="Top" Width="38"/>
+        <Label Content="bewuchs" HorizontalAlignment="Left" Height="28" Margin="1006,624,0,0" VerticalAlignment="Top" Width="66"/>
+        <Label x:Name="Focus_Pfalnzenbewuchs" Content="" HorizontalAlignment="Left" Height="28" Margin="1077,624,0,0" VerticalAlignment="Top" Width="38"/>
+
+        <Label x:Name="testfeld1" Content="0" HorizontalAlignment="Left" Height="26" Margin="926,50,0,0" VerticalAlignment="Top" Width="36"/>
+
+        <Slider x:Name="slider1" HorizontalAlignment="Left" Margin="778,82,0,0" VerticalAlignment="Top" Width="184" ValueChanged="Slider_ValueChanged" TickPlacement="BottomRight" Minimum="0.001" Maximum="1" Value="0.1" TickFrequency="0.05" Height="24"/>
+
+        <Label x:Name="anzeigeProzentWasser" Content="Label" HorizontalAlignment="Left" Margin="934,210,0,0" VerticalAlignment="Top" Height="26" Width="36"/>
+        <Label x:Name="anzeigeProzentPlankton" Content="Label" HorizontalAlignment="Left" Margin="934,241,0,0" VerticalAlignment="Top" Height="26" Width="36"/>
+        <Label x:Name="anzeigeProzentFische" Content="Label" HorizontalAlignment="Left" Margin="934,274,0,0" VerticalAlignment="Top" Height="26" Width="36"/>
+        <Label x:Name="anzeigeProzentHaie" Content="Label" HorizontalAlignment="Left" Margin="934,306,0,0" VerticalAlignment="Top" Height="26" Width="36"/>
+        <Slider x:Name="HeufigkeitWasser" HorizontalAlignment="Left" Margin="774,210,0,0" VerticalAlignment="Top" Width="155" Maximum="100" Value="80" Height="26" ValueChanged="HeufigkeitWasser_ValueChanged" TickPlacement="BottomRight" TickFrequency="10" />
+        <Slider x:Name="HeufigkeitPlankton" HorizontalAlignment="Left" Margin="774,242,0,0" VerticalAlignment="Top" Width="155" Maximum="100" Value="50" Height="26" ValueChanged="HeufigkeitPlankton_ValueChanged" TickPlacement="BottomRight" TickFrequency="10"  />
+        <Slider x:Name="HeufigkeitFische" HorizontalAlignment="Left" Margin="774,274,0,0" VerticalAlignment="Top" Width="155" Maximum="100" Value="10" Height="26" ValueChanged="HeufigkeitFische_ValueChanged" TickPlacement="BottomRight" TickFrequency="10" />
+        <Slider x:Name="HeufigkeitHaie" HorizontalAlignment="Left" Margin="774,306,0,0" VerticalAlignment="Top" Width="155" Maximum="100" Value="5" Height="26" ValueChanged="HeufigkeitHaie_ValueChanged" TickPlacement="BottomRight" TickFrequency="10"  />
+        <Button x:Name="ShowOptionen" Content="Optionen" HorizontalAlignment="Left" Height="34" Margin="778,352,0,0" VerticalAlignment="Top" Width="184" Click="ShowOptionen_Click_1" Background="#FF4A94E4"/>
+        <Frame Content=" Fisch Parameter" HorizontalAlignment="Left" Height="343" Margin="983,54,0,0" VerticalAlignment="Top" Width="216" BorderBrush="Black" Background="#FF476B81"/>
+        <Frame Content=" Hai Parameter" HorizontalAlignment="Left" Height="343" Margin="1204,55,0,0" VerticalAlignment="Top" Width="216" BorderBrush="Black" Background="#FF476B81"/>
+        <Frame Content=" Pflanzen Parameter" HorizontalAlignment="Left" Height="351" Margin="1204,403,0,0" VerticalAlignment="Top" Width="216" BorderBrush="Black" Background="#FF476B81"/>
+        <Frame Content=" ???" HorizontalAlignment="Left" Height="170" Margin="983,402,0,0" VerticalAlignment="Top" Width="216" BorderBrush="Black" Background="#FF476B81"/>
+
+
+
+        <Label x:Name="FischAlter_label" Content="Label" HorizontalAlignment="Left" Margin="1153,112,0,0" VerticalAlignment="Top" Height="26" Width="36"/>
+        <Label x:Name="anzeigeProzentWasser_Copy1" Content="Alter für Fortpflanzung" HorizontalAlignment="Left" Margin="993,81,0,0" VerticalAlignment="Top" Height="26" Width="196"/>
+        <Label x:Name="FischMaxAlter_label" Content="Label" HorizontalAlignment="Left" Margin="1153,174,0,0" VerticalAlignment="Top" Height="26" Width="36"/>
+        <Label x:Name="anzeigeProzentWasser_Copy3" Content="Maximal Alter" HorizontalAlignment="Left" Margin="993,143,0,0" VerticalAlignment="Top" Height="26" Width="196"/>
+        <Label x:Name="FischGeburtenWied_label" Content="Label" HorizontalAlignment="Left" Margin="1153,236,0,0" VerticalAlignment="Top" Height="26" Width="36"/>
+        <Label x:Name="anzeigeProzentWasser_Copy5" Content="Geburten Wiederholung" HorizontalAlignment="Left" Margin="993,205,0,0" VerticalAlignment="Top" Height="26" Width="196"/>
+        <Label x:Name="FischSättigungEssen_label" Content="Label" HorizontalAlignment="Left" Margin="1153,298,0,0" VerticalAlignment="Top" Height="26" Width="36"/>
+        <Label x:Name="anzeigeProzentWasser_Copy7" Content="SättigungBeimEssen" HorizontalAlignment="Left" Margin="993,267,0,0" VerticalAlignment="Top" Height="26" Width="196"/>
+        <Label x:Name="FischSättigungVerbrauch_label" Content="Label" HorizontalAlignment="Left" Margin="1153,360,0,0" VerticalAlignment="Top" Height="26" Width="36"/>
+        <Label x:Name="anzeigeProzentWasser_Copy9" Content="SättigungsVerbrauch" HorizontalAlignment="Left" Margin="993,329,0,0" VerticalAlignment="Top" Height="26" Width="196"/>
+        <Label x:Name="HaieAlter_label" Content="Label" HorizontalAlignment="Left" Margin="1373,112,0,0" VerticalAlignment="Top" Height="26" Width="36"/>
+        <Label x:Name="anzeigeProzentWasser_Copy11" Content="Alter für Fortpflanzung" HorizontalAlignment="Left" Margin="1213,81,0,0" VerticalAlignment="Top" Height="26" Width="196"/>
+        <Label x:Name="HaiMaxAlter_label" Content="Label" HorizontalAlignment="Left" Margin="1373,174,0,0" VerticalAlignment="Top" Height="26" Width="36"/>
+        <Label x:Name="anzeigeProzentWasser_Copy13" Content="Maximal Alter" HorizontalAlignment="Left" Margin="1213,143,0,0" VerticalAlignment="Top" Height="26" Width="196"/>
+        <Label x:Name="HaiGeburtenWied_label" Content="Label" HorizontalAlignment="Left" Margin="1373,236,0,0" VerticalAlignment="Top" Height="26" Width="36"/>
+        <Label x:Name="anzeigeProzentWasser_Copy15" Content="Geburten Wiederholung" HorizontalAlignment="Left" Margin="1213,205,0,0" VerticalAlignment="Top" Height="26" Width="196"/>
+        <Label x:Name="HaiSättigungEssen_label" Content="Label" HorizontalAlignment="Left" Margin="1373,298,0,0" VerticalAlignment="Top" Height="26" Width="36"/>
+        <Label x:Name="anzeigeProzentWasser_Copy17" Content="SättigungBeimEssen" HorizontalAlignment="Left" Margin="1213,267,0,0" VerticalAlignment="Top" Height="26" Width="196"/>
+        <Label x:Name="HaiSättigungVerbrauch_label" Content="Label" HorizontalAlignment="Left" Margin="1373,360,0,0" VerticalAlignment="Top" Height="26" Width="36"/>
+        <Label x:Name="anzeigeProzentWasser_Copy19" Content="SättigungsVerbrauch" HorizontalAlignment="Left" Margin="1213,329,0,0" VerticalAlignment="Top" Height="26" Width="196"/>
+        <Label x:Name="anzeigeProzentWasser_Copy" Content="MinWachstum" HorizontalAlignment="Left" Margin="1213,428,0,0" VerticalAlignment="Top" Height="26" Width="196"/>
+        <Label x:Name="PflanzeMinWachstum_label" Content="Label" HorizontalAlignment="Left" Margin="1373,462,0,0" VerticalAlignment="Top" Height="26" Width="36"/>
+        <Label x:Name="PflanzeMaxWachstumL1" Content="MaxWachstum" HorizontalAlignment="Left" Margin="1213,500,0,0" VerticalAlignment="Top" Height="26" Width="196"/>
+        <Label x:Name="PflanzeMaxWachstum_label" Content="Label" HorizontalAlignment="Left" Margin="1373,534,0,0" VerticalAlignment="Top" Height="26" Width="36"/>
+        <Label x:Name="anzeigeProzentWasser_Copy4" Content="MaximalerBewuchs" HorizontalAlignment="Left" Margin="1213,572,0,0" VerticalAlignment="Top" Height="26" Width="196"/>
+        <Label x:Name="PflanzeMaxBewuchs_label" Content="Label" HorizontalAlignment="Left" Margin="1373,606,0,0" VerticalAlignment="Top" Height="26" Width="36"/>
+
+
+        <Slider x:Name="FischAlter" HorizontalAlignment="Left" Margin="993,112,0,0" VerticalAlignment="Top" Width="155" Maximum="300" Value="80" Height="26" TickPlacement="BottomRight" TickFrequency="10" ValueChanged="FischAlter_ValueChanged" />
+        <Slider x:Name="FischMaxAlter" HorizontalAlignment="Left" Margin="993,174,0,0" VerticalAlignment="Top" Width="155" Maximum="300" Value="80" Height="26" ValueChanged="FischMaxAlter_ValueChanged" TickPlacement="BottomRight" TickFrequency="10" />
+        <Slider x:Name="FischGeburtenWied" HorizontalAlignment="Left" Margin="993,236,0,0" VerticalAlignment="Top" Width="155" Maximum="300" Value="80" Height="26" ValueChanged="FischGeburtenWied_ValueChanged" TickPlacement="BottomRight" TickFrequency="10" />
+        <Slider x:Name="FischSättigungEssen" HorizontalAlignment="Left" Margin="993,298,0,0" VerticalAlignment="Top" Width="155" Maximum="300" Value="80" Height="26" ValueChanged="FischSättigungEssen_ValueChanged" TickPlacement="BottomRight" TickFrequency="10" />
+        <Slider x:Name="FischSättigungVerbrauch" HorizontalAlignment="Left" Margin="993,360,0,0" VerticalAlignment="Top" Width="155" Maximum="300" Value="0" Height="26" ValueChanged="FischSättigungVerbrauch_ValueChanged" TickPlacement="BottomRight" TickFrequency="10" />
+        <Slider x:Name="HaieAlter" HorizontalAlignment="Left" Margin="1213,112,0,0" VerticalAlignment="Top" Width="155" Maximum="300" Value="80" Height="26" ValueChanged="HaieAlter_ValueChanged" TickPlacement="BottomRight" TickFrequency="10" />
+        <Slider x:Name="HaiMaxAlter" HorizontalAlignment="Left" Margin="1213,174,0,0" VerticalAlignment="Top" Width="155" Maximum="300" Value="80" Height="26" ValueChanged="HaiMaxAlter_ValueChanged" TickPlacement="BottomRight" TickFrequency="10" />
+        <Slider x:Name="HaiGeburtenWied" HorizontalAlignment="Left" Margin="1213,236,0,0" VerticalAlignment="Top" Width="155" Maximum="300" Value="80" Height="26" ValueChanged="HaiGeburtenWied_ValueChanged" TickPlacement="BottomRight" TickFrequency="10" />
+        <Slider x:Name="HaiSättigungEssen" HorizontalAlignment="Left" Margin="1213,298,0,0" VerticalAlignment="Top" Width="155" Maximum="300" Value="80" Height="26" ValueChanged="HaiSättigungEssen_ValueChanged" TickPlacement="BottomRight" TickFrequency="10" />
+        <Slider x:Name="HaiSättigungVerbrauch" HorizontalAlignment="Left" Margin="1213,360,0,0" VerticalAlignment="Top" Width="155" Maximum="300" Value="0" Height="26" ValueChanged="HaiSättigungVerbrauch_ValueChanged" TickPlacement="BottomRight" TickFrequency="10" />
+
+        <Slider x:Name="PflanzeMinWachstum" HorizontalAlignment="Left" Margin="1213,462,0,0" VerticalAlignment="Top" Width="155" Maximum="300" Value="10" Height="26" ValueChanged="PflanzeMinWachstum_ValueChanged" TickPlacement="BottomRight" TickFrequency="10" />
+        <Slider x:Name="PflanzeMaxWachstum" HorizontalAlignment="Left" Margin="1213,534,0,0" VerticalAlignment="Top" Width="155" Maximum="300" Value="40" Height="26" TickPlacement="BottomRight" TickFrequency="10" ValueChanged="PflanzeMaxWachstum_ValueChanged" />
+        <Slider x:Name="PflanzeMaxBewuchs" HorizontalAlignment="Left" Margin="1213,606,0,0" VerticalAlignment="Top" Width="155" Maximum="2000" Value="800" Height="26" ValueChanged="PflanzeMaxBewuchs_ValueChanged" TickPlacement="BottomRight" TickFrequency="10" />
+        <Frame Content=" " HorizontalAlignment="Left" Height="700" Margin="1425,54,0,0" VerticalAlignment="Top" Width="30" BorderBrush="Black" Background="#FF476B81"/>
+
+
+
+
+
+
+    </Grid>
+</Window>
