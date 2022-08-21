@@ -18,10 +18,24 @@ Implementation
 Screenshots
 -----------
 * Explanation of the user interface.
-![Explanation](/screenshots/PandoraDoku1.png)
+> ![Explanation](/screenshots/PandoraDoku1.png)
+>
+> 1: start / stop / new random field
+>
+> 2: fish parameter
+>
+> 3: shark parameter
+>
+> 4: game field
+>
+> 5: total counter of turn
+>
+> 6: plankton parameter
+>
+> 7: parameter of a cell (game field mouseover)
 
 * Simulation with fish(yellow) and plankton(green)
-![SimulationPF](/screenshots/PandoraDoku2.png)
+> ![SimulationPF](/screenshots/PandoraDoku2.png)
 
 * Simulation with shark(red), fish(yellow) and plankton(green)
-![SimulationPFH](/screenshots/PandoraDoku3.png)
+> ![SimulationPFH](/screenshots/PandoraDoku3.png)
