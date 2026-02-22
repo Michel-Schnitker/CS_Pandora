@@ -1,0 +1,206 @@
+<Page x:Class="PandoraWorld_CS.GUI.ConfigPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="900"
+      Title="ConfigPage">
+
+    <Page.Resources>
+        <Style x:Key="ConfigLabel" TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5,2"/>
+            <Setter Property="MinWidth" Value="150"/>
+        </Style>
+        <Style x:Key="ConfigTextBox" TargetType="TextBox">
+            <Setter Property="Width" Value="80"/>
+            <Setter Property="Margin" Value="5,2"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="SectionHeader" TargetType="TextBlock">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="0,10,0,5"/>
+            <Setter Property="Foreground" Value="{StaticResource SecondaryBrush}"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="{StaticResource PrimaryBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock Grid.Row="0" 
+                   Text="Konfiguration" 
+                   FontSize="24" 
+                   FontWeight="Bold" 
+                   Margin="0,0,0,15"
+                   Foreground="{StaticResource SecondaryBrush}"/>
+
+        <!-- Main Content -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Left Column: Plant & Percentages -->
+                <StackPanel Grid.Column="0" Margin="10 10 10 0">
+                    
+                    <!-- Spawn Percentages -->
+                    <TextBlock Text="Spawn-Prozentsaetze" Style="{StaticResource SectionHeader}"/>
+                    <Border BorderBrush="#E0E0E0" BorderThickness="1" Padding="10" CornerRadius="5">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Fish %" Style="{StaticResource ConfigLabel}"/>
+                                <TextBox x:Name="TxtFishPercentage" Style="{StaticResource ConfigTextBox}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Shark %" Style="{StaticResource ConfigLabel}"/>
+                                <TextBox x:Name="TxtSharkPercentage" Style="{StaticResource ConfigTextBox}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Plant %" Style="{StaticResource ConfigLabel}"/>
+                                <TextBox x:Name="TxtPlantPercentage" Style="{StaticResource ConfigTextBox}"/>
+                            </StackPanel>
+                            <TextBlock x:Name="TxtPercentageSum" Text="Summe: 0%" Margin="5,5,0,0" FontStyle="Italic" Foreground="{StaticResource SecondaryBrush}"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Timer Configuration -->
+                    <TextBlock Text="Geschwindigkeit" Style="{StaticResource SectionHeader}"/>
+                    <Border BorderBrush="#E0E0E0" BorderThickness="1" Padding="10" CornerRadius="5">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Spiel-Timer (ms)" Style="{StaticResource ConfigLabel}"/>
+                                <TextBox x:Name="TxtGameTimerInterval" Style="{StaticResource ConfigTextBox}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Schritt-Timer (ms)" Style="{StaticResource ConfigLabel}"/>
+                                <TextBox x:Name="TxtStepTimerInterval" Style="{StaticResource ConfigTextBox}"/>
+                            </StackPanel>
+                            <TextBlock Text="Niedrigere Werte = schnellere Simulation" 
+                                       Margin="5,5,0,0" 
+                                       FontStyle="Italic" 
+                                       Foreground="{StaticResource SecondaryBrush}"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Plant Configuration -->
+                    <TextBlock Text="Pflanzen-Konfiguration" Style="{StaticResource SectionHeader}"/>
+                    <Border BorderBrush="#E0E0E0" BorderThickness="1" Padding="10" CornerRadius="5">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Wachstum Min" Style="{StaticResource ConfigLabel}"/>
+                                <TextBox x:Name="TxtPlantGrowthMin" Style="{StaticResource ConfigTextBox}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Wachstum Max" Style="{StaticResource ConfigLabel}"/>
+                                <TextBox x:Name="TxtPlantGrowthMax" Style="{StaticResource ConfigTextBox}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Max Groesse" Style="{StaticResource ConfigLabel}"/>
+                                <TextBox x:Name="TxtPlantMaxSize" Style="{StaticResource ConfigTextBox}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Ausbreitungs-Schwelle" Style="{StaticResource ConfigLabel}"/>
+                                <TextBox x:Name="TxtPlantSpreadThreshold" Style="{StaticResource ConfigTextBox}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Nachbarn fuer Schrumpfen" Style="{StaticResource ConfigLabel}"/>
+                                <TextBox x:Name="TxtPlantSurroundedMin" Style="{StaticResource ConfigTextBox}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Schrumpfen Min" Style="{StaticResource ConfigLabel}"/>
+                                <TextBox x:Name="TxtPlantShrinkMin" Style="{StaticResource ConfigTextBox}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Schrumpfen Max" Style="{StaticResource ConfigLabel}"/>
+                                <TextBox x:Name="TxtPlantShrinkMax" Style="{StaticResource ConfigTextBox}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+                <!-- Right Column: LifeForm Config -->
+                <StackPanel Grid.Column="1" Margin="10 10 10 0">
+                    
+                    <!-- LifeForm Selector -->
+                    <TextBlock Text="Lebensform-Konfiguration" Style="{StaticResource SectionHeader}"/>
+                    <Border BorderBrush="#E0E0E0" BorderThickness="1" Padding="10" CornerRadius="5">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                <TextBlock Text="Lebensform auswaehlen:" Style="{StaticResource ConfigLabel}"/>
+                                <ComboBox x:Name="CmbLifeForm" 
+                                          Width="120" 
+                                          SelectionChanged="CmbLifeForm_SelectionChanged">
+                                    <ComboBoxItem Content="Fish" IsSelected="True"/>
+                                    <ComboBoxItem Content="Shark"/>
+                                </ComboBox>
+                            </StackPanel>
+
+                            <Separator Margin="0,5"/>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Max Alter" Style="{StaticResource ConfigLabel}"/>
+                                <TextBox x:Name="TxtMaxAge" Style="{StaticResource ConfigTextBox}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Geschlechtsreife (Alter)" Style="{StaticResource ConfigLabel}"/>
+                                <TextBox x:Name="TxtMaturityAge" Style="{StaticResource ConfigTextBox}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Paarungs-Cooldown" Style="{StaticResource ConfigLabel}"/>
+                                <TextBox x:Name="TxtBreedingCooldown" Style="{StaticResource ConfigTextBox}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Essen Min" Style="{StaticResource ConfigLabel}"/>
+                                <TextBox x:Name="TxtEatAmountMin" Style="{StaticResource ConfigTextBox}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Essen Max" Style="{StaticResource ConfigLabel}"/>
+                                <TextBox x:Name="TxtEatAmountMax" Style="{StaticResource ConfigTextBox}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Naehrwert-Multiplikator" Style="{StaticResource ConfigLabel}"/>
+                                <TextBox x:Name="TxtNutrientValue" Style="{StaticResource ConfigTextBox}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Energie-Verlust/Runde" Style="{StaticResource ConfigLabel}"/>
+                                <TextBox x:Name="TxtEnergyLossPerRound" Style="{StaticResource ConfigTextBox}"/>
+                            </StackPanel>
+                            
+                            <TextBlock x:Name="TxtLifeFormInfo" 
+                                       Text="" 
+                                       Margin="5,10,0,0" 
+                                       FontStyle="Italic" 
+                                       TextWrapping="Wrap"
+                                       Foreground="{StaticResource SecondaryBrush}"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+
+        <!-- Footer with Buttons -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="15,15,15,15">
+            <Button x:Name="BtnReset" 
+                    Content="Zuruecksetzen" 
+                    Width="100" 
+                    Height="30" 
+                    Margin="5,0"
+                    Click="BtnReset_Click"/>
+            <Button x:Name="BtnApply" 
+                    Content="Anwenden" 
+                    Width="100" 
+                    Height="30" 
+                    Margin="5,0"
+                    Click="BtnApply_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

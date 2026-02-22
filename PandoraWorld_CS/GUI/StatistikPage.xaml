@@ -1,0 +1,112 @@
+﻿<Page x:Class="PandoraWorld_CS.GUI.StatistikPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="StatistikPage">
+
+    <Grid Background="{StaticResource PrimaryBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock Grid.Row="0" 
+                   Text="Spielstatistik" 
+                   FontSize="28" 
+                   FontWeight="Bold" 
+                   Foreground="{StaticResource SecondaryBrush}"
+                   HorizontalAlignment="Center" 
+                   Margin="0,15,0,10"/>
+
+        <!-- Current Statistics Panel -->
+        <Border Grid.Row="1" 
+                Background="{StaticResource SecondaryBrush}" 
+                CornerRadius="8" 
+                Margin="20,10" 
+                Padding="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Round Counter -->
+                <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                    <TextBlock Text="Runde" Foreground="LightGray" FontSize="14" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="TxtRound" Text="0" Foreground="White" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center"/>
+                </StackPanel>
+
+                <!-- Fish Counter -->
+                <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                    <TextBlock Text="🐟 Fische" Foreground="{StaticResource BoardBlue}" FontSize="14" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="TxtFishCount" Text="0" Foreground="{StaticResource BoardBlue}" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center"/>
+                </StackPanel>
+
+                <!-- Shark Counter -->
+                <StackPanel Grid.Column="2" HorizontalAlignment="Center">
+                    <TextBlock Text="🦈 Haie" Foreground="{StaticResource BoardRed}" FontSize="14" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="TxtSharkCount" Text="0" Foreground="{StaticResource BoardRed}" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center"/>
+                </StackPanel>
+
+                <!-- Plant Counter -->
+                <StackPanel Grid.Column="3" HorizontalAlignment="Center">
+                    <TextBlock Text="🌿 Pflanzenfelder" Foreground="{StaticResource BoardGreen}" FontSize="14" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="TxtPlantCount" Text="0" Foreground="{StaticResource BoardGreen}" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- History Chart Area -->
+        <Grid Grid.Row="2" Margin="20,10,20,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,10">
+                <TextBlock Text="Letzte " Foreground="{StaticResource SecondaryBrush}" VerticalAlignment="Center"/>
+                <ComboBox x:Name="CmbHistoryCount" Width="80" SelectedIndex="1" SelectionChanged="CmbHistoryCount_SelectionChanged">
+                    <ComboBoxItem Content="50"/>
+                    <ComboBoxItem Content="100"/>
+                    <ComboBoxItem Content="200"/>
+                    <ComboBoxItem Content="500"/>
+                    <ComboBoxItem Content="1000"/>
+                    <ComboBoxItem Content="2000"/>
+                </ComboBox>
+                <TextBlock Text=" Runden" Foreground="{StaticResource SecondaryBrush}" VerticalAlignment="Center" Margin="5,0,20,0"/>
+            </StackPanel>
+
+            <!-- Simple Line Chart using Canvas -->
+            <Border Grid.Row="1" Background="{StaticResource SecondaryBrush}" CornerRadius="8">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+
+                    <Canvas x:Name="ChartCanvas" Grid.Row="0" Margin="50,20,20,10" ClipToBounds="True"/>
+                    
+                    <!-- Y-Axis Labels -->
+                    <StackPanel x:Name="YAxisLabels" Orientation="Vertical" Width="45" HorizontalAlignment="Left" Margin="5,20,0,10"/>
+
+                    <!-- Legend -->
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Rectangle Width="20" Height="3" Fill="{StaticResource BoardBlue}" Margin="0,0,5,0"/>
+                        <TextBlock Text="Fische" Foreground="LightGray" Margin="0,0,20,0"/>
+                        <Rectangle Width="20" Height="3" Fill="{StaticResource BoardRed}" Margin="0,0,5,0"/>
+                        <TextBlock Text="Haie" Foreground="LightGray" Margin="0,0,20,0"/>
+                        <Rectangle Width="20" Height="3" Fill="{StaticResource BoardGreen}" Margin="0,0,5,0"/>
+                        <TextBlock Text="Pflanzenfelder" Foreground="LightGray"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>
