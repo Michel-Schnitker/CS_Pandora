@@ -8,6 +8,12 @@ Implementation
 -----------
 
 * Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+
+
+Rules
+-----------
+
+* Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
  
 
 Screenshots
